@@ -21,6 +21,10 @@ export default Card;
 
 const Container = styled.div`
 position: relative;
+box-sizing: border-box;
+box-shadow: 0.5px 0.5px 5px black;
+margin-top: 1rem;
+
 .card1{
   svg{
   color: white;
@@ -37,6 +41,7 @@ img{
     object-fit: fill;
     border: none;
     margin: 10px;
+    border-radius: 0.2rem;
 
 }
 
