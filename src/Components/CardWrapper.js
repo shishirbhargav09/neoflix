@@ -37,6 +37,7 @@ export default CardWrapper
 
 const Container = styled.div`
  display: flex;
+ position: relative;
  margin-top: 2rem;
  flex-direction: row;
  flex-wrap: wrap;

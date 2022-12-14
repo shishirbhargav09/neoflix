@@ -6,7 +6,7 @@ function Card(props) {
   const navigate = useNavigate()
   return (
     <Container>
-      <div >
+      <div className="card1">
         <img src={`https://image.tmdb.org/t/p/original`+props.img} alt="card_img" />
         <h4>{props.title}</h4>
         <BsPlayCircle onClick={() => {
@@ -21,6 +21,16 @@ export default Card;
 
 const Container = styled.div`
 position: relative;
+.card1{
+  svg{
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 7rem ;
+  left: 4rem;
+  cursor: pointer;;
+}
+}
 img{
     height: 15rem;
     width: 10rem;
@@ -29,12 +39,5 @@ img{
     margin: 10px;
 
 }
-svg{
-  color: white;
-  font-size: 50px;
-  position: absolute;
-  top: 7rem ;
-  left: 4rem;
-  cursor: pointer;;
-}
+
 `;
