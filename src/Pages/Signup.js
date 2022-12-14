@@ -8,6 +8,8 @@ import {
 
 
 import styled from "styled-components";
+import Navbar from "../Components/Navbar";
+import { toast, ToastContainer } from "react-toastify";
 function Signup() {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
@@ -17,7 +19,10 @@ function Signup() {
       });
 
   return (
-    <Container>
+   <>
+   <Navbar/>
+   <ToastContainer />
+   <Container>
       <div className="main d-flex flex-column justify-content-center align-items-center ">
         <div className="form d-flex flex-column justify-content-center align-items-center ">
         <h2>Sign Up New User</h2>
@@ -33,7 +38,11 @@ function Signup() {
             
 
             await createUserWithEmailAndPassword(firebaseAuth, email, password).then((response) => {
-                console.log(response)
+                toast.success("Registered Successfully")
+            }).catch((error) => {
+              if (error.code === 'auth/email-already-in-use') {
+                toast.error('Email Already in Use');
+              }
             })
           }}>SignUp</button>
           <button onClick={() => {
@@ -45,7 +54,7 @@ function Signup() {
           alt="background"
         />
       </div>
-    </Container>
+    </Container></>
   );
 }
 
