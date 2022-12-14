@@ -12,7 +12,7 @@ function Banner() {
     const fetchbanner = async () => {
      const {data} = await axios.get('https://api.themoviedb.org/3/trending/all/day?api_key=392906b1774fdfba8b7331458d140f46')
      setbannerdata([...data.results])
-     console.log(bannerdata);
+    //  console.log(bannerdata);
      
     }
     fetchbanner();
@@ -76,8 +76,24 @@ const Container = styled.div`
     bottom: 10rem;
     left: 10rem;
   }
-  Carousel{
-    transition: 1.5s;
+  
+  @media screen and (max-width: 1000px){
+    height: 50vh;
+  
+  img{
+    height: 50vh;
+    object-fit: cover;
+
+  }
+  p{
+    font-weight: 450;
+    position: absolute;
+    color: white;
+    z-index: 10;
+    font-size: 20px;
+    bottom: 4rem;
+    left: 4rem;
   }
   
+  }
 `;
