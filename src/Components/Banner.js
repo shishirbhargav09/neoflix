@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
-
+import {BsArrowDown} from 'react-icons/bs'
 function Banner() {
   const [bannerdata, setbannerdata] = useState([])
   const image_url = 'https://image.tmdb.org/t/p/original'
@@ -19,6 +19,7 @@ function Banner() {
    }, [])
   return (
     <Container>
+      <div className="arrow"><BsArrowDown/></div>
     <Carousel
       infiniteLoop
       autoPlay
@@ -78,6 +79,19 @@ const Container = styled.div`
     font-size: 55px;
     bottom: 10rem;
     left: 10rem;
+  }
+  .arrow{
+    position: absolute;
+    z-index: 25;
+    color: white;
+    font-size: 50px;
+    bottom: 5rem;
+    right: 0rem;
+    animation: updown 0.5s infinite alternate;
+  }
+  @keyframes updown {
+    from {transform: translateY(0.2rem)}
+  to {transform: translateY(0.6rem)}
   }
   
   @media screen and (max-width: 1000px){
