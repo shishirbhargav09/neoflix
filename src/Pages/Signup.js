@@ -20,6 +20,7 @@ function Signup() {
     <Container>
       <div className="main d-flex flex-column justify-content-center align-items-center ">
         <div className="form d-flex flex-column justify-content-center align-items-center ">
+        <h2>Sign Up New User</h2>
           <input type="email" placeholder="Enter Your Email" onChange={(event) => {
             setEmail(event.target.value);
 
@@ -35,6 +36,9 @@ function Signup() {
                 console.log(response)
             })
           }}>SignUp</button>
+          <button onClick={() => {
+            navigate("/login")
+          }}>Login</button>
         </div>
         <img
           src="https://assets.nflxext.com/ffe/siteui/vlv3/ac9aedf1-a687-4c5d-965c-2fc3eac84aea/ed2f162a-b9ef-43fd-8042-84978039a3ba/IN-en-20221206-popsignuptwoweeks-perspective_alpha_website_small.jpg"
@@ -49,11 +53,14 @@ export default Signup;
 
 const Container = styled.div`
   .main {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
+    h2{
+      color: white;
+    }
     .form {
       position: relative;
-      height: 50vh;
+      height: 40vh;
       width: 50vh;
       background-color: #000000a0;
       z-index: 99;

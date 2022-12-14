@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './Components/Navbar';
 import Watch from './Components/Watch';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -9,6 +10,7 @@ import Signup from './Pages/Signup';
 function App() {
   return (
     <BrowserRouter>
+    <Navbar/>
       <Routes>
        
           

@@ -60,6 +60,9 @@ function Banner() {
 export default Banner;
 
 const Container = styled.div`
+  position: relative;
+  top: -5rem;
+
   height: 100vh;
   
   img{
