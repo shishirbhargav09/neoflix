@@ -8,7 +8,7 @@ function Card(props) {
     <Container>
       <div className="card1">
         <img src={`https://image.tmdb.org/t/p/original`+props.img} alt="card_img" />
-        <h4>{props.title}</h4>
+       <center> <h4>{props.title}</h4></center>
         <BsPlayCircle onClick={() => {
           navigate('/watch')
         }}/>
